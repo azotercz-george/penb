@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kalkulace PENB – Průkaz Energetické Náročnosti Budovy</title>
+<meta name="description" content="Profesionální vyhotovení průkazu energetické náročnosti budovy (PENB), energetický audit a energetický posudek. Rychle, levně, po celé ČR."/>
+<meta name="keywords" content="PENB, průkaz energetické náročnosti budovy, energetický štítek, energetický audit, kalkulace PENB, cena PENB"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.kalkulacepenb.cz/"/>
+<meta property="og:title" content="Kalkulace PENB – Průkaz Energetické Náročnosti Budovy"/>
+<meta property="og:description" content="Rychle a profesionálně vyhotovíme PENB pro váš dům nebo byt. Celá ČR, platba až po dokončení."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="cs_CZ"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"KalkulacePENB.cz","description":"Zprostředkování a vyhotovení průkazu energetické náročnosti budovy (PENB), energetický audit a energetický posudek.","url":"https://www.kalkulacepenb.cz","telephone":"+420731055826","email":"azotercz@gmail.com","areaServed":"CZ"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ── VARIABLES ── */
+:root{
+  --navy:#0d2137; --blue:#1565c0; --blue2:#1976d2;
+  --teal:#00897b; --teal2:#26a69a;
+  --amber:#ff8f00; --amber2:#ffa726;
+  --gray0:#f5f7fa; --gray1:#e8ecf1; --gray2:#b0bec5; --gray3:#546e7a;
+  --text:#1a2332; --white:#ffffff;
+  --shadow:0 4px 24px rgba(13,33,55,.13); --r:10px;
+}
+
+/* ── BASE ── */
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Lato',sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--white);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy);
+  display:flex;justify-content:flex-end;align-items:center;
+  gap:20px;padding:7px 24px;font-size:12.5px;flex-wrap:wrap;
+}
+.topbar a{color:rgba(255,255,255,.8);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s;white-space:nowrap}
+.topbar a:hover{color:#fff}
+.topbar-icon{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+/* ── HEADER ── */
+header{
+  background:var(--white);border-bottom:3px solid var(--blue);
+  padding:12px 24px;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.logo-img{height:64px;width:auto;transition:transform .3s;flex-shrink:0}
+.logo-wrap:hover .logo-img{transform:scale(1.04)}
+.logo-text{min-width:0}
+.logo-text h1{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--blue);letter-spacing:-.5px;line-height:1.15;white-space:nowrap}
+.logo-text p{font-size:11px;color:var(--gray3);font-weight:500;margin-top:2px;white-space:nowrap}
+.header-right{text-align:right;flex-shrink:0}
+.header-phone{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:var(--navy);display:block;letter-spacing:-.3px;white-space:nowrap}
+.header-email{font-size:13px;color:var(--blue2);text-decoration:none;display:block}
+.header-email:hover{text-decoration:underline}
+
+/* ── NAV ── */
+nav{background:var(--blue);position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:stretch;flex-wrap:wrap}
+.nav-link{
+  color:rgba(255,255,255,.88);text-decoration:none;
+  padding:13px 16px;font-size:13px;font-weight:600;
+  font-family:'Montserrat',sans-serif;letter-spacing:.1px;
+  transition:background .2s,color .2s;display:block;white-space:nowrap;
+}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,.13);color:#fff}
+.nav-link.kontakt-btn{background:var(--amber);color:var(--navy)!important;margin-left:auto;font-weight:700}
+.nav-link.kontakt-btn:hover{background:var(--amber2)}
+
+/* hamburger */
+.hamburger{
+  display:none;background:none;border:none;cursor:pointer;
+  padding:13px 16px;margin-left:auto;
+  flex-direction:column;justify-content:center;gap:5px;
+  touch-action:manipulation;
+}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-links{display:flex;align-items:stretch;flex:1;flex-wrap:wrap}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:380px;overflow:hidden;display:flex;align-items:center}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease-in-out}
+.hero-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,25,50,.85) 0%,rgba(10,25,50,.55) 55%,rgba(10,25,50,.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:32px 48px;max-width:640px;animation:fadeUp .8s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-block;background:rgba(255,143,0,.2);border:1px solid rgba(255,143,0,.5);color:var(--amber2);font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;font-family:'Montserrat',sans-serif}
+.hero-content h2{font-family:'Montserrat',sans-serif;font-size:clamp(22px,4vw,40px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.hero-content h2 span{color:var(--amber2)}
+.hero-content p{font-size:15px;color:rgba(255,255,255,.82);margin-bottom:24px;line-height:1.65}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap}
+.hero-pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;font-family:'Montserrat',sans-serif}
+.hero-dots{position:absolute;bottom:14px;right:20px;z-index:3;display:flex;gap:6px}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:all .3s;border:none}
+.hero-dot.active{background:#fff;transform:scale(1.2)}
+
+/* ── ENERGY BAR ── */
+.energy-bar{display:flex;max-width:100%;overflow:hidden}
+.energy-bar-inner{display:flex;max-width:1100px;margin:0 auto;flex:1}
+.energy-bar-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;color:#fff;min-width:0}
+.energy-bar-item small{font-size:8px;font-weight:500;opacity:.8;margin-top:1px;text-align:center;display:none}
+.eb-a{background:#00a651}.eb-b{background:#4caf50}.eb-c{background:#8bc34a;color:#333}
+.eb-d{background:#ffeb3b;color:#333}.eb-e{background:#ffc107;color:#333}
+.eb-f{background:#ff7043}.eb-g{background:#e53935}
+
+/* ── PAGE LAYOUT ── */
+.page{max-width:1100px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+
+/* ── TABS ── */
+.tabs-nav{display:flex;border-bottom:3px solid var(--blue);gap:2px;overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+.tabs-nav::-webkit-scrollbar{display:none}
+.tab-btn{
+  background:var(--gray1);color:var(--gray3);
+  border:1px solid var(--gray2);border-bottom:none;
+  padding:10px 16px;font-size:13px;font-weight:700;
+  cursor:pointer;font-family:'Montserrat',sans-serif;
+  border-radius:7px 7px 0 0;transition:all .15s;
+  white-space:nowrap;flex-shrink:0;touch-action:manipulation;
+}
+.tab-btn:hover{background:var(--gray0);color:var(--blue)}
+.tab-btn.active{background:var(--white);color:var(--blue);border-color:var(--blue);border-bottom:3px solid var(--white);position:relative;bottom:-2px}
+.tab-panel{
+  display:none;
+  border:1px solid var(--blue);border-top:none;
+  border-radius:0 0 var(--r) var(--r);
+  padding:24px 22px;background:var(--white);
+  animation:fadeIn .25s ease;
+}
+.tab-panel.active{display:block!important}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.tab-panel h2{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:var(--navy);border-bottom:2px solid var(--gray1);padding-bottom:10px;margin-bottom:16px;letter-spacing:-.2px}
+.tab-panel p{margin-bottom:12px;color:var(--text)}
+.tab-panel strong{color:var(--blue)}
+.section-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal);margin-bottom:5px;font-family:'Montserrat',sans-serif}
+
+/* ── CONTENT ELEMENTS ── */
+.intro-box{background:linear-gradient(135deg,#e3f0fc,#e8f5e9);border-left:4px solid var(--blue);border-radius:0 var(--r) var(--r) 0;padding:14px 18px;margin-bottom:18px}
+.intro-box p{margin:0;font-size:15px}
+.main-photo{width:100%;border-radius:var(--r);object-fit:cover;max-height:240px;margin-bottom:18px;box-shadow:var(--shadow)}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+.service-card{background:var(--gray0);border:1px solid var(--gray1);border-radius:var(--r);padding:16px;border-top:3px solid var(--teal);transition:box-shadow .2s,transform .2s}
+.service-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.service-icon{font-size:20px;margin-bottom:7px}
+.service-card h3{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.service-card p{font-size:13px;color:var(--gray3);margin:0}
+
+/* Law table */
+.law-table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0;border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.law-table th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.3px}
+.law-table td{padding:10px 12px;border-bottom:1px solid var(--gray1);vertical-align:top}
+.law-table tr:last-child td{border-bottom:none}
+.law-table tr:nth-child(even) td{background:var(--gray0)}
+.law-table td:first-child{font-weight:700;color:var(--blue)}
+
+/* Warn box */
+.warn-box{background:#fffde7;border:1px solid #ffe082;border-left:4px solid var(--amber);border-radius:0 var(--r) var(--r) 0;padding:13px 16px;font-size:14px;margin-top:14px}
+
+/* Cenik */
+.cenik-wrap{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.cenik-table{width:100%;border-collapse:collapse;font-size:13.5px;border-radius:var(--r);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.09);min-width:480px}
+.cenik-table th{background:var(--navy);color:#fff;padding:11px 12px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.3px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+.cenik-table th.left{text-align:left}
+.cenik-table td{padding:10px 12px;border:1px solid var(--gray1);vertical-align:middle}
+.cenik-table tr:nth-child(even) td{background:var(--gray0)}
+.cenik-table td:first-child{font-weight:600;color:var(--navy)}
+.price{text-align:center;font-weight:700;color:var(--teal);font-family:'Montserrat',sans-serif;white-space:nowrap}
+.price-hi{text-align:center;font-weight:700;color:var(--amber);font-family:'Montserrat',sans-serif;white-space:nowrap}
+.cenik-notes{background:var(--gray0);border:1px solid var(--gray1);border-radius:var(--r);padding:14px 16px;margin-top:12px}
+.cenik-notes p{font-size:13px;color:var(--gray3);margin:3px 0}
+.cenik-notes strong{color:var(--text)}
+
+/* References */
+.ref-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+.ref-card{background:var(--white);border:1px solid var(--gray1);border-radius:var(--r);padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.06);position:relative}
+.ref-card::before{content:'"';position:absolute;top:8px;right:14px;font-size:56px;color:var(--gray1);font-family:'Montserrat',sans-serif;line-height:1}
+.ref-stars{color:var(--amber);font-size:14px;margin-bottom:8px;letter-spacing:2px}
+.ref-text{font-style:italic;font-size:14px;color:var(--gray3);margin-bottom:12px;line-height:1.6}
+.ref-author-row{display:flex;align-items:center;gap:9px}
+.ref-avatar{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;flex-shrink:0}
+.ref-name{font-weight:700;font-size:13px;color:var(--navy)}
+.ref-role{font-size:11px;color:var(--gray2)}
+.stats-band{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.stat-card{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;text-align:center;padding:18px 8px;border-radius:var(--r);box-shadow:0 4px 16px rgba(21,101,192,.25)}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;line-height:1}
+.stat-lbl{font-size:11px;opacity:.78;margin-top:3px}
+
+/* Form */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group{margin-bottom:12px}
+.form-group label{display:block;font-size:13px;font-weight:700;margin-bottom:4px;color:var(--navy);font-family:'Montserrat',sans-serif}
+.form-group .req{color:#e53935}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1.5px solid var(--gray1);border-radius:7px;font-size:14px;font-family:'Lato',sans-serif;color:var(--text);background:var(--white);transition:border .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue2);box-shadow:0 0 0 3px rgba(25,118,210,.1)}
+.form-group textarea{resize:vertical;min-height:85px}
+.btn-submit{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;letter-spacing:.3px;transition:opacity .2s,transform .1s;box-shadow:0 4px 14px rgba(0,137,123,.3);touch-action:manipulation}
+.btn-submit:hover{opacity:.9}
+.btn-submit:active{transform:scale(.98)}
+.form-note{font-size:12px;color:var(--gray2);margin-top:8px}
+.success-msg{display:none;background:#e8f5e9;border:1px solid #66bb6a;border-radius:var(--r);padding:14px 18px;color:#2e7d32;font-weight:700;margin-top:12px;font-family:'Montserrat',sans-serif}
+.error-msg{display:none;background:#fdecea;border:1px solid #ef9a9a;border-radius:var(--r);padding:14px 18px;color:#c62828;font-weight:600;margin-top:12px;font-size:14px}
+.error-msg{display:none;background:#fdecea;border:1px solid #ef9a9a;border-radius:var(--r);padding:14px 18px;color:#c62828;font-weight:600;margin-top:12px;font-size:14px}
+
+/* FAQ */
+.faq-list{margin:14px 0}
+.faq-item{border:1px solid var(--gray1);border-radius:var(--r);margin-bottom:7px;overflow:hidden}
+.faq-q{padding:13px 16px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:var(--gray0);transition:background .2s;font-family:'Montserrat',sans-serif;touch-action:manipulation}
+.faq-q:hover{background:var(--gray1)}
+.faq-q.open{background:var(--blue);color:#fff}
+.faq-q.open .faq-arrow{transform:rotate(180deg)}
+.faq-arrow{transition:transform .3s;font-size:11px;margin-left:8px;flex-shrink:0}
+.faq-a{display:none;padding:13px 16px;font-size:14px;color:var(--gray3);line-height:1.65;border-top:1px solid var(--gray1);background:var(--white)}
+.faq-item.open .faq-a{display:block}
+
+/* Downloads */
+.download-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.download-item{display:flex;align-items:center;gap:9px;background:var(--gray0);border:1px solid var(--gray1);border-radius:8px;padding:11px 14px;text-decoration:none;color:var(--navy);font-size:13px;font-weight:600;transition:background .2s,border-color .2s}
+.download-item:hover{background:#dbeafe;border-color:var(--blue)}
+.dl-icon{font-size:18px;flex-shrink:0}
+
+/* Steps */
+.steps-list{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.step-item{display:flex;align-items:flex-start;gap:12px;background:var(--gray0);border:1px solid var(--gray1);border-radius:8px;padding:11px 14px;font-size:14px}
+.step-num{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px}
+
+/* ── SIDEBAR ── */
+aside{position:sticky;top:64px;display:flex;flex-direction:column;gap:16px}
+.sbox{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--gray1)}
+.sbox-head{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:11px 16px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.3px}
+.sbox-body{padding:16px}
+.c-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.c-row:last-child{margin-bottom:0}
+.c-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue2));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-icon svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2}
+.c-label{font-size:10px;color:var(--gray2);font-weight:700;letter-spacing:.5px;text-transform:uppercase;display:block;margin-bottom:2px;font-family:'Montserrat',sans-serif}
+.c-val{font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;display:block}
+.c-val:hover{color:var(--blue)}
+.energy-label{display:flex;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.el-item{flex:1;padding:7px 0;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;color:#fff}
+.el-a{background:#00a651}.el-b{background:#4caf50}.el-c{background:#8bc34a;color:#333}
+.el-d{background:#ffeb3b;color:#333}.el-e{background:#ffc107;color:#333}
+.el-f{background:#ff7043}.el-g{background:#e53935}
+.aktuality-item{padding:8px 0;border-bottom:1px solid var(--gray1);font-size:13px;color:var(--gray3);line-height:1.5}
+.aktuality-item:last-child{border:none;padding-bottom:0}
+.aktuality-item a{color:var(--blue2);text-decoration:none;font-weight:600}
+.aktuality-item a:hover{text-decoration:underline}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo-img{height:48px;filter:brightness(0) invert(1);opacity:.7;margin-bottom:8px}
+.footer-brand p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
+.footer-col h4{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-col a,.footer-col p{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;display:block;margin-bottom:5px}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1100px;margin:16px auto 0;text-align:center;font-size:11.5px;color:rgba(255,255,255,.3)}
+
+/* ── RESPONSIVE: Tablet ── */
+@media(max-width:1024px){
+  .page{grid-template-columns:1fr 260px;gap:20px;padding:20px 16px}
+  .hero-content{padding:28px 32px}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:20px}
+  .footer-brand{grid-column:1/-1}
+  .energy-bar-item small{display:none}
+  .nav-link{padding:13px 13px;font-size:12.5px}
+}
+
+/* ── RESPONSIVE: Mobile ── */
+@media(max-width:768px){
+  /* Topbar */
+  .topbar{justify-content:center;gap:14px;padding:6px 12px;font-size:11.5px}
+
+  /* Header */
+  header{padding:10px 14px}
+  .logo-img{height:50px}
+  .logo-text h1{font-size:16px}
+  .logo-text p{font-size:10px}
+  .header-right{display:none}
+
+  /* Nav – hamburger */
+  .hamburger{display:flex}
+  .nav-links{
+    flex-direction:column;width:100%;
+    background:var(--blue);
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+  .nav-links.closed{display:none!important}
+  .nav-link{padding:13px 18px;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px}
+  .nav-link.kontakt-btn{margin-left:0;border-bottom:none}
+
+  /* Hero */
+  .hero{min-height:auto}
+  .hero-content{padding:24px 18px}
+  .hero-badge{font-size:9.5px;padding:3px 10px}
+  .hero-content h2{font-size:20px;margin-bottom:8px}
+  .hero-content p{font-size:13px;margin-bottom:14px}
+  .hero-pill{font-size:11px;padding:4px 11px}
+  .hero-dots{bottom:8px;right:12px}
+
+  /* Page – single column */
+  .page{grid-template-columns:1fr;padding:14px 12px;gap:14px}
+  aside{position:static}
+
+  /* Tabs */
+  .tab-btn{font-size:11.5px;padding:9px 12px}
+  .tab-panel{padding:16px 14px}
+
+  /* Grids → single column */
+  .services-grid{grid-template-columns:1fr}
+  .ref-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .download-grid{grid-template-columns:1fr}
+
+  /* Stats → 2 columns */
+  .stats-band{grid-template-columns:1fr 1fr}
+
+  /* Law table */
+  .law-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+
+  /* Footer */
+  .footer-inner{grid-template-columns:1fr;gap:18px}
+  footer{padding:20px 14px 14px}
+}
+
+/* ── RESPONSIVE: Small phones ── */
+@media(max-width:380px){
+  .hero-content h2{font-size:17px}
+  .stats-band{grid-template-columns:1fr}
+  .tab-btn{font-size:10.5px;padding:8px 10px}
+  .logo-text h1{font-size:14px}
+  .logo-text p{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="tel:+420731055826">
+    <svg class="topbar-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.82 19 19.5 19.5 0 0 1 5 12.18 19.79 19.79 0 0 1 2.08 3.18 2 2 0 0 1 4.07 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    +420 731 055 826
+  </a>
+  <a href="mailto:azotercz@gmail.com">
+    <svg class="topbar-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    azotercz@gmail.com
+  </a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo-wrap" href="#">
+    <div class="logo-text">
+      <h1>Kalkulace PENB</h1>
+      <p>Průkaz Energetické Náročnosti Budovy</p>
+    </div>
+  </a>
+  <div class="header-right">
+    <span class="header-phone">+420 731 055 826</span>
+    <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#" class="nav-link active" onclick="switchTab('onas',this);closeMenu();return false">O nás</a>
+      <a href="#" class="nav-link" onclick="switchTab('zakon',this);closeMenu();return false">Zákon / PENB</a>
+      <a href="#" class="nav-link" onclick="switchTab('cenik',this);closeMenu();return false">Ceník</a>
+      <a href="#" class="nav-link" onclick="switchTab('objednavka',this);closeMenu();return false">Objednávka</a>
+      <a href="#" class="nav-link" onclick="switchTab('reference',this);closeMenu();return false">Reference</a>
+      <a href="#" class="nav-link" onclick="switchTab('spoluprace',this);closeMenu();return false">Spolupráce</a>
+      <a href="#kontakt" class="nav-link kontakt-btn" onclick="closeMenu()">KONTAKT</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <!-- Background slides – Unsplash (volná licence CC0) -->
+  <div class="hero-slide active" style="background-image:url('house1.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=85')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&q=85')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=85')"></div>
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1464146072230-91cabc968266?w=1400&q=85')"></div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Průkaz energetické náročnosti budovy</div>
+    <h2>Kalkulace <span>PENB</span><br>pro celou Českou republiku</h2>
+    <p>Zprostředkujeme a vyhotovíme PENB, energetický audit i posudek. Profesionálně, rychle a bez zálohy.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">✓ Platba až po dokončení</span>
+      <span class="hero-pill">✓ 3–5 pracovních dní</span>
+      <span class="hero-pill">✓ Celá ČR</span>
+    </div>
+  </div>
+
+  <!-- Slide dots -->
+  <div class="hero-dots">
+    <button class="hero-dot active" onclick="goSlide(0)" aria-label="Snímek 1"></button>
+    <button class="hero-dot" onclick="goSlide(1)" aria-label="Snímek 2"></button>
+    <button class="hero-dot" onclick="goSlide(2)" aria-label="Snímek 3"></button>
+    <button class="hero-dot" onclick="goSlide(3)" aria-label="Snímek 4"></button>
+    <button class="hero-dot" onclick="goSlide(4)" aria-label="Snímek 5"></button>
+    <button class="hero-dot" onclick="goSlide(5)" aria-label="Snímek 6"></button>
+  </div>
+</section>
+
+<!-- ENERGY BAR -->
+<div class="energy-bar">
+  <div class="energy-bar-item eb-a">A<small>úsporná</small></div>
+  <div class="energy-bar-item eb-b">B<small>velmi úsporná</small></div>
+  <div class="energy-bar-item eb-c">C<small>úsporná</small></div>
+  <div class="energy-bar-item eb-d">D<small>méně úsporná</small></div>
+  <div class="energy-bar-item eb-e">E<small>nehospodárná</small></div>
+  <div class="energy-bar-item eb-f">F<small>velmi nehospodárná</small></div>
+  <div class="energy-bar-item eb-g">G<small>mimořádně nehospodárná</small></div>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page">
+  <main>
+
+    <!-- TABS NAV -->
+    <div class="tabs-nav" role="tablist">
+      <button class="tab-btn active" onclick="switchTabBtn('onas',this)">O nás</button>
+      <button class="tab-btn" onclick="switchTabBtn('zakon',this)">Zákon / PENB</button>
+      <button class="tab-btn" onclick="switchTabBtn('cenik',this)">Ceník</button>
+      <button class="tab-btn" onclick="switchTabBtn('objednavka',this)">Objednávka</button>
+      <button class="tab-btn" onclick="switchTabBtn('reference',this)">Reference</button>
+      <button class="tab-btn" onclick="switchTabBtn('spoluprace',this)">Spolupráce</button>
+    </div>
+
+    <!-- TAB: O NÁS -->
+    <div class="tab-panel active" id="tab-onas">
+      <p class="section-badge">Kdo jsme</p>
+      <h2>O nás</h2>
+      <div class="intro-box">
+        <p>Zprostředkujeme a vyhotovujeme <strong>Průkaz energetické náročnosti budovy (PENB), Energetický audit (EA), Energetický posudek (EP).</strong></p>
+      </div>
+      <img src="house1.jpg" alt="" class="main-photo"/>
+      <p>Spolupráce s námi je velmi jednoduchá, vše vyřídíme za vás a dle vašeho přání vás budeme informovat o průběhu. Zaručujeme profesionální přístup a zpracování dokumentace. Převezmeme za vás administrativu a starosti spojené s vyhotovením.</p>
+      <p>Máme mnoho spokojených zákazníků z celé České republiky z řad majitelů rodinných domů, bytových domů, SVJ a veřejné správy.</p>
+      <p>Podívejte se do nejčastěji kladených <a href="#" onclick="switchTabBtn('zakon',null);return false" style="color:var(--blue);font-weight:700">OTÁZEK</a>.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Průkaz PENB</h3>
+          <p>Povinný dokument při prodeji, pronájmu nebo kolaudaci nemovitosti. Rychle a za výhodnou cenu.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Energetický audit (EA)</h3>
+          <p>Podrobná analýza spotřeby energie budovy s doporučeními pro úspory. Nutný pro čerpání dotací.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>Energetický posudek (EP)</h3>
+          <p>Odborný posudek pro dotační programy Zelená úsporám a jiné investiční a rekonstrukční záměry.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>Poradenství zdarma</h3>
+          <p>Nejste si jistí, co potřebujete? Zavolejte nebo napište – rádi poradíme bez závazku.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Levnější energie</h3>
+          <p>Svým klientům poskytujeme možnost odběru levnější elektřiny a plynu!</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <h3>Spolupráce a provize</h3>
+          <p>Pro realitní makléře, správce a jiné partnery nabízíme výhodný provizní systém.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: ZÁKON / INFO -->
+    <div class="tab-panel" id="tab-zakon">
+      <p class="section-badge">Legislativa a informace</p>
+      <h2>Zákon a povinnosti – co je PENB?</h2>
+      <p>Průkaz energetické náročnosti budovy (PENB) vychází ze <strong>zákona č. 406/2000 Sb.</strong> o hospodaření energií. Klasifikuje budovy do energetických tříd <strong>A až G</strong>, podobně jako u spotřebičů.</p>
+
+      <table class="law-table">
+        <thead><tr><th>Legislativa</th><th>Popis</th></tr></thead>
+        <tbody>
+          <tr><td>Zákon č. 406/2000 Sb.</td><td>Základní zákon o hospodaření energií. Stanovuje povinnost mít PENB při prodeji, pronájmu nebo kolaudaci budovy.</td></tr>
+          <tr><td>Novela č. 103/2015 Sb.</td><td>Zpřesňuje podmínky pro vystavení průkazu, kvalifikaci energetických specialistů a sankce za porušení.</td></tr>
+          <tr><td>Směrnice EU 2010/31/EU</td><td>Evropská směrnice o energetické náročnosti budov. Cíl: klimatická neutralita Evropy do roku 2050.</td></tr>
+          <tr><td>Kdo potřebuje PENB?</td><td>Majitelé při prodeji nebo pronájmu, stavebníci nových budov a příjemci veřejné podpory na rekonstrukce.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="warn-box">
+        ⚠️ <strong>Pozor:</strong> Za nesplnění povinnosti mít PENB hrozí pokuta až <strong>100 000 Kč</strong>. Celý proces zvládneme za <strong>3–5 pracovních dní</strong>.
+      </div>
+
+      <h2 style="margin-top:28px">Informace o PENB</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Co je to průkaz energetické náročnosti budovy (PENB)? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">PENB je dokument, který hodnotí energetickou náročnost budovy a zařazuje ji do energetické třídy A–G. Je povinný při prodeji, pronájmu nebo kolaudaci stavby. Zpracovává jej autorizovaný energetický specialista.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Byty, SVJ, bytové domy a PENB <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Pro bytové domy a SVJ se PENB zpracovává pro celou budovu jako celek – nikoliv pro jednotlivé byty. Při prodeji nebo pronájmu jednotlivého bytu musí vlastník předložit PENB celého bytového domu. Pokud SVJ PENB nemá, je povinností vlastníka bytu ho zajistit.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Co je to energetický posudek (EP)? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Energetický posudek je odborné stanovisko energetického specialisty. Slouží jako podklad pro žádosti o dotace (např. Zelená úsporám), pro posouzení vhodnosti navrhovaných opatření ke snížení energetické náročnosti budov nebo pro posouzení hospodárnosti provozu energetického hospodářství.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Jak dlouho platí PENB? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Průkaz energetické náročnosti budovy platí <strong>10 let</strong> od data jeho vydání, nebo do provedení větší změny dokončené budovy, která by ovlivnila její energetickou náročnost.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Co potřebuji pro vyhotovení PENB? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Pro vyhotovení PENB jsou potřeba podklady o budově – nejlépe v digitální formě (projektová dokumentace, výkresy), nebo papírové kopie. Pokud podklady nemáte, nevadí – cena se upraví dle ceníku a vše domluvíme individuálně. Stáhněte si <a href="http://www.kalkulacepenb.cz/sites/default/files/Seznam podkladu.pdf" target="_blank" style="color:var(--blue);font-weight:700">seznam podkladů (PDF)</a>.</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:28px">Ke stažení</h2>
+      <div class="download-grid">
+        <a href="http://www.kalkulacepenb.cz/sites/default/files/Seznam podkladu.pdf" target="_blank" class="download-item">
+          <span class="dl-icon">📄</span>
+          <span>Seznam podkladů</span>
+        </a>
+        <a href="http://www.kalkulacepenb.cz/sites/default/files/406_2000%20NOVELA.pdf" target="_blank" class="download-item">
+          <span class="dl-icon">📄</span>
+          <span>Zákon č. 406/2000 Sb. – novela</span>
+        </a>
+        <a href="http://www.kalkulacepenb.cz/sites/default/files/zakon-103-2015.pdf" target="_blank" class="download-item">
+          <span class="dl-icon">📄</span>
+          <span>Zákon č. 103/2015 Sb.</span>
+        </a>
+        <a href="http://www.kalkulacepenb.cz/sites/default/files/D31-2010.pdf" target="_blank" class="download-item">
+          <span class="dl-icon">📄</span>
+          <span>Směrnice EU 2010/31/EU</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- TAB: CENÍK -->
+    <div class="tab-panel" id="tab-cenik">
+      <p class="section-badge">Transparentní ceny</p>
+      <h2>Ceník PENB</h2>
+      <p>Ceny jsou uvedeny <strong>bez DPH</strong> a bez návštěvy technika. Pro složitější půdorysy je cena individuální.</p>
+      <div class="cenik-wrap">
+        <table class="cenik-table">
+          <thead>
+            <tr>
+              <th class="left" rowspan="2" style="min-width:200px">Typ nemovitosti</th>
+              <th colspan="3">Podklady pro vyhotovení</th>
+            </tr>
+            <tr>
+              <th>Digitální forma</th>
+              <th>Papírová forma</th>
+              <th>Nekompletní / chybí*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Rodinný dům jednopodlažní</td><td class="price">6 000,- Kč</td><td class="price">7 000,- Kč</td><td class="price-hi">8 000,- Kč</td></tr>
+            <tr><td>Rodinný dům dvoupodlažní</td><td class="price">8 000,- Kč</td><td class="price">9 000,- Kč</td><td class="price-hi">10 000,- Kč</td></tr>
+            <tr><td>Rodinný dům vícepodlažní</td><td class="price">8 500,- Kč</td><td class="price">10 000,- Kč</td><td class="price-hi">12 000,- Kč</td></tr>
+            <tr><td>Bytový dům</td><td class="price">12 000,- Kč</td><td class="price">14 000,- Kč</td><td class="price-hi">20 000,- Kč</td></tr>
+            <tr><td>Budova nad 2 000 m²</td><td class="price">17 000,- Kč</td><td class="price">20 000,- Kč</td><td class="price-hi">25 000,- Kč</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cenik-notes">
+        <p><strong>* Nekompletní podklady</strong> – cena platí, pokud podklady nejsou k dispozici nebo jsou neúplné.</p>
+        <p><strong>Expresní vyhotovení do 3 dnů</strong> – navýšení ceny o 50 %.</p>
+        <p><strong>Platba převodem</strong> až po dokončení PENB – žádné zálohy. Platba dobírkou: navýšení o 300,- Kč.</p>
+      </div>
+    </div>
+
+    <!-- TAB: OBJEDNÁVKA -->
+    <div class="tab-panel" id="tab-objednavka">
+      <p class="section-badge">Snadné objednání</p>
+      <h2>Objednávka PENB</h2>
+      <p>Vyplňte formulář a my vás do 24 hodin kontaktujeme s nabídkou. Pole označená <span style="color:#e53935">*</span> jsou povinná.</p>
+      <form id="order-form" onsubmit="submitForm(event)">
+<!-- Formspree skryté pole pro cílový email -->
+<input type="hidden" name="_next" value=""/>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Jméno a příjmení <span class="req">*</span></label>
+            <input type="text" name="jmeno" placeholder="Jan Novák" required/>
+          </div>
+          <div class="form-group">
+            <label>Telefon <span class="req">*</span></label>
+            <input type="tel" name="telefon" placeholder="+420 000 000 000" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="vas@email.cz" required/>
+        </div>
+        <div class="form-group">
+          <label>Typ nemovitosti <span class="req">*</span></label>
+          <select name="typ_nemovitosti" required>
+            <option value="">— Vyberte typ —</option>
+            <option>Rodinný dům jednopodlažní</option>
+            <option>Rodinný dům dvoupodlažní</option>
+            <option>Rodinný dům vícepodlažní</option>
+            <option>Bytový dům</option>
+            <option>Budova nad 2 000 m²</option>
+            <option>Jiné</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Adresa nemovitosti <span class="req">*</span></label>
+          <input type="text" name="adresa" placeholder="Ulice, číslo popisné, město, PSČ" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Forma podkladů</label>
+            <select name="forma_podkladu">
+              <option>Digitální forma</option>
+              <option>Papírová forma</option>
+              <option>Nekompletní / nejsou k dispozici</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Požadovaný termín</label>
+            <select name="termin">
+              <option>Standardní (3–5 týdnů)</option>
+              <option>Expresní do 3 týdnů (+50% ceny)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Poznámka / dotaz</label>
+          <textarea name="poznamka" placeholder="Zde napište jakékoliv další informace nebo dotazy..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">Odeslat objednávku →</button>
+        <p class="form-note">Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem vyřízení vaší poptávky.</p>
+        <div class="success-msg" id="success-msg">✔ Děkujeme! Vaše objednávka byla odeslána. Ozveme se vám do 24 hodin.</div>
+        <div class="error-msg" id="error-msg">✖ Nepodařilo se odeslat. Prosím napište přímo na <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a></div>
+      </form>
+    </div>
+
+    <!-- TAB: REFERENCE -->
+    <div class="tab-panel" id="tab-reference">
+      <p class="section-badge">Spokojení klienti</p>
+      <h2>Reference</h2>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="ref-stars">★★★★★</div>
+          <p class="ref-text">Průkaz jsme potřebovali urgentně před podpisem kupní smlouvy. Vše bylo hotové do tří dnů, bez jediného problému. Skvělá komunikace a férová cena.</p>
+          <div class="ref-author-row">
+            <div class="ref-avatar">JN</div>
+            <div><div class="ref-name">Jan Novák</div><div class="ref-role">Prodej rodinného domu, Praha</div></div>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-stars">★★★★★</div>
+          <p class="ref-text">Jako SVJ jsme potřebovali PENB pro celý bytový dům. Komunikace byla skvělá, cena odpovídající. Vřele doporučuji všem správcům bytových domů.</p>
+          <div class="ref-author-row">
+            <div class="ref-avatar" style="background:var(--teal)">MH</div>
+            <div><div class="ref-name">Marie Horáčková</div><div class="ref-role">Předsedkyně SVJ, Brno</div></div>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-stars">★★★★★</div>
+          <p class="ref-text">Energetický audit pro čerpání dotace Zelená úsporám byl zpracován precizně a včas. Dostali jsme dotaci v plné výši.</p>
+          <div class="ref-author-row">
+            <div class="ref-avatar" style="background:var(--amber);color:var(--navy)">PK</div>
+            <div><div class="ref-name">Pavel Kratochvíl</div><div class="ref-role">Rekonstrukce domu, Olomouc</div></div>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-stars">★★★★★</div>
+          <p class="ref-text">Profesionální přístup, rychlé jednání. PENB pro naši kancelářskou budovu byl hotový přesně v termínu. Oceňuji možnost platby až po dokončení.</p>
+          <div class="ref-author-row">
+            <div class="ref-avatar" style="background:#7b1fa2">LV</div>
+            <div><div class="ref-name">Lucie Veselá</div><div class="ref-role">Správce kancelářské budovy, Ostrava</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-band">
+        <div class="stat-card"><div class="stat-num">500+</div><div class="stat-lbl">spokojených klientů</div></div>
+        <div class="stat-card"><div class="stat-num">14</div><div class="stat-lbl">krajů České republiky</div></div>
+        <div class="stat-card"><div class="stat-num">3–5</div><div class="stat-lbl">dní průměrná dodací lhůta</div></div>
+      </div>
+    </div>
+
+    <!-- TAB: SPOLUPRÁCE -->
+    <div class="tab-panel" id="tab-spoluprace">
+      <p class="section-badge">Partnerský program</p>
+      <h2>Spolupráce</h2>
+      <p>Pro naše partnery nabízíme program spojený s výhodami pro klienty a provizním systémem.</p>
+
+      <div class="intro-box">
+        <p><strong>Jsme otevřeni spolupráci</strong> s realitními makléři, správci nemovitostí, architekty, projektanty a dalšími odborníky v oblasti nemovitostí.</p>
+      </div>
+
+      <h3 style="font-family:'Montserrat',sans-serif;color:var(--navy);margin:20px 0 12px;font-size:16px">Jaké výhody získáte?</h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✅</div>
+          <h3>Bez administrativy</h3>
+          <p>Převezmeme za vás veškerou administrativu a starosti spojené s vyhotovením PENB. Nechceme vás zatěžovat složitostmi a obírat o váš cenný čas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Provizní systém</h3>
+          <p>Jednoduchý a přehledný provizní systém. Po dokončení vám vyplatíme provizi dle smlouvy, kterou společně podepíšeme.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏷️</div>
+          <h3>Lepší ceny</h3>
+          <p>Lepší ceny pro vás a vaše klienty. Smluvní vztah není limitující ani zavazující – žádný minimální odběr.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📚</div>
+          <h3>Proškolení zdarma</h3>
+          <p>Proškolíme vás i vaše spolupracovníky o problematice PENB plynoucí z novely zákona č. 406/2000 Sb.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Montserrat',sans-serif;color:var(--navy);margin:24px 0 12px;font-size:16px">Postup zadávání klienta</h3>
+      <div class="steps-list">
+        <div class="step-item"><span class="step-num">1</span><span>Přejděte na záložku <a href="#" onclick="switchTabBtn('objednavka',null);return false" style="color:var(--blue);font-weight:700">Objednávka</a></span></div>
+        <div class="step-item"><span class="step-num">2</span><span>Vyplňte druh nemovitosti, formu podkladů, dobu vypracování a kontaktní údaje klienta (povinná pole)</span></div>
+        <div class="step-item"><span class="step-num">3</span><span>Do poznámky uveďte <strong>unikátní kód</strong> pro vaši identifikaci</span></div>
+        <div class="step-item"><span class="step-num">4</span><span>Na zadaný e-mail přijde klientovi potvrzovací zpráva s akceptací objednávky</span></div>
+      </div>
+
+      <div class="warn-box" style="background:#e8f5e9;border-color:#66bb6a;border-left-color:var(--teal);margin-top:20px">
+        💬 Pro konkrétní informace o spolupráci se obraťte na <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a> nebo <a href="tel:+420731055826" style="color:var(--teal);font-weight:700">+420 731 055 826</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside id="kontakt">
+
+    <!-- Kontakt -->
+    <div class="sbox">
+      <div class="sbox-head">📞 Kontakt</div>
+      <div class="sbox-body">
+        <div class="c-row">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.82 19 19.5 19.5 0 0 1 5 12.18 19.79 19.79 0 0 1 2.08 3.18 2 2 0 0 1 4.07 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><span class="c-label">Mobil</span><a href="tel:+420731055826" class="c-val">+420 731 055 826</a></div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><span class="c-label">E-mail</span><a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a></div>
+        </div>
+        <div class="c-row">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div><span class="c-label">Společnost</span><span class="c-val" style="font-size:13px;font-weight:700">AZOTER CZ s.r.o.</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Energie -->
+    <div class="sbox">
+      <div class="sbox-head">⚡ Energetické třídy</div>
+      <div class="sbox-body">
+        <div class="energy-label">
+          <div class="el-item el-a">A</div><div class="el-item el-b">B</div><div class="el-item el-c">C</div>
+          <div class="el-item el-d">D</div><div class="el-item el-e">E</div><div class="el-item el-f">F</div><div class="el-item el-g">G</div>
+        </div>
+        <p style="font-size:12.5px;color:var(--gray3);margin-top:10px;line-height:1.55">Třída <strong>A</strong> = mimořádně úsporná. Třída <strong>G</strong> = mimořádně nehospodárná. PENB zařadí vaši budovu do správné třídy.</p>
+      </div>
+    </div>
+
+    <!-- Aktuality -->
+    <div class="sbox">
+      <div class="sbox-head">📰 Aktuality</div>
+      <div class="sbox-body">
+        <div class="aktuality-item">Svým klientům poskytujeme možnost odběru <strong>levnější elektřiny a plynu</strong>!</div>
+        <div class="aktuality-item"><a href="http://www.kalkulacepenb.cz/sites/default/files/406_2000%20NOVELA.pdf" target="_blank">Zákon č. 406/2000 Sb. – novela (PDF)</a></div>
+        <div class="aktuality-item"><a href="http://www.kalkulacepenb.cz/sites/default/files/zakon-103-2015.pdf" target="_blank">Zákon č. 103/2015 Sb. (PDF)</a></div>
+        <div class="aktuality-item"><a href="http://www.kalkulacepenb.cz/sites/default/files/D31-2010.pdf" target="_blank">Směrnice EU 2010/31/EU (PDF)</a></div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p>Profesionální vyhotovení průkazu energetické náročnosti budovy pro celou Českou republiku.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigace</h4>
+      <a href="#" onclick="switchTabBtn('onas',null);return false">O nás</a>
+      <a href="#" onclick="switchTabBtn('zakon',null);return false">Zákon / PENB info</a>
+      <a href="#" onclick="switchTabBtn('cenik',null);return false">Ceník</a>
+      <a href="#" onclick="switchTabBtn('objednavka',null);return false">Objednávka</a>
+      <a href="#" onclick="switchTabBtn('reference',null);return false">Reference</a>
+      <a href="#" onclick="switchTabBtn('spoluprace',null);return false">Spolupráce</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <a href="tel:+420731055826">+420 731 055 826</a>
+      <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a>
+      <p>AZOTER CZ s.r.o.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 KalkulacePENB.cz · Průkaz Energetické Náročnosti Budovy · Všechna práva vyhrazena</div>
+</footer>
+
+<script>
+/* ── FAQ accordion ── */
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) {
+    i.classList.remove('open');
+    i.querySelector('.faq-q').classList.remove('open');
+  });
+  if (!isOpen) { item.classList.add('open'); el.classList.add('open'); }
+}
+
+/* ── Hero slideshow ── */
+(function() {
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots   = document.querySelectorAll('.hero-dot');
+  var idx    = 0;
+  var timer;
+  window.goSlide = function(n) {
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+    clearInterval(timer);
+    timer = setInterval(function() { window.goSlide(idx + 1); }, 5000);
+  };
+  timer = setInterval(function() { window.goSlide(idx + 1); }, 5000);
+})();
+
+/* ── Záložky ── */
+function switchTabBtn(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  document.querySelectorAll('.nav-link:not(.kontakt-btn)').forEach(function(a) {
+    a.classList.remove('active');
+  });
+  var panel = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  if (btn && btn.classList && btn.classList.contains('tab-btn')) {
+    btn.classList.add('active');
+  }
+  var nav = document.querySelector('.tabs-nav');
+  if (nav) {
+    var top = nav.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+}
+
+function switchTab(id, navLink) {
+  switchTabBtn(id, null);
+  if (navLink && navLink.classList && navLink.classList.contains('nav-link')) {
+    navLink.classList.add('active');
+  }
+}
+
+/* ── Hamburger ── */
+(function() {
+  var hb = document.getElementById('hamburger');
+  var nl = document.getElementById('nav-links');
+  if (!hb || !nl) return;
+  function setMobile() {
+    if (window.innerWidth <= 768) nl.classList.add('closed');
+    else nl.classList.remove('closed');
+  }
+  hb.addEventListener('click', function() {
+    hb.classList.toggle('open');
+    nl.classList.toggle('closed');
+  });
+  window.addEventListener('resize', setMobile);
+  setMobile();
+})();
+
+function closeMenu() {
+  var hb = document.getElementById('hamburger');
+  var nl = document.getElementById('nav-links');
+  if (window.innerWidth <= 768 && nl) {
+    nl.classList.add('closed');
+    if (hb) hb.classList.remove('open');
+  }
+}
+
+/* ── Objednávka ── */
+function submitForm(e) {
+  e.preventDefault();
+  var form = document.getElementById('order-form');
+  var btn  = document.getElementById('submit-btn');
+  var ok   = document.getElementById('success-msg');
+  var err  = document.getElementById('error-msg');
+
+  if (!form || !btn || !ok || !err) return;
+
+  ok.style.display  = 'none';
+  err.style.display = 'none';
+  btn.disabled      = true;
+  btn.textContent   = 'Odesílám…';
+  form.style.opacity = '0.7';
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'odeslat-objednavku.php', true);
+  xhr.setRequestHeader('Accept', 'application/json');
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== 4) return;
+    btn.disabled       = false;
+    btn.textContent    = 'Odeslat objednávku →';
+    form.style.opacity = '1';
+    if (xhr.status >= 200 && xhr.status < 300) {
+      try {
+        var resp = JSON.parse(xhr.responseText);
+        if (resp && resp.ok === false) { err.style.display = 'block'; return; }
+      } catch (ex) { /* ignoruj chybu parsování */ }
+      ok.style.display = 'block';
+      form.reset();
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      err.style.display = 'block';
+    }
+  };
+
+  xhr.onerror = function() {
+    btn.disabled       = false;
+    btn.textContent    = 'Odeslat objednávku →';
+    form.style.opacity = '1';
+    err.style.display  = 'block';
+  };
+
+  xhr.send(new FormData(form));
+}
+</script>
+</body>
+</html>
