@@ -13,6 +13,8 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="cs_CZ"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"KalkulacePENB.cz","description":"Zprostředkování a vyhotovení průkazu energetické náročnosti budovy (PENB), energetický audit a energetický posudek.","url":"https://www.kalkulacepenb.cz","telephone":"+420731055826","email":"azotercz@gmail.com","areaServed":"CZ"}</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("xjs3TyjDyl2_V8A2Y");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
 <style>
@@ -368,7 +370,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
   </a>
   <div class="header-right">
     <span class="header-phone">+420 731 055 826</span>
-    <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a>
+    <a href="mailto:azotercz@gmail.com" style="color:#c62828;font-weight:700">azotercz@gmail.com</a>
   </div>
 </header>
 
@@ -598,10 +600,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
       <h2>Objednávka PENB</h2>
       <p>Vyplňte formulář a my vás do 24 hodin kontaktujeme s nabídkou. Pole označená <span style="color:#e53935">*</span> jsou povinná.</p>
       <form id="order-form" onsubmit="submitForm(event)">
-<!-- Formspree skryté pole pro cílový email -->
-<input type="hidden" name="_next" value=""/>
-
-        <div class="form-row">
+<div class="form-row">
           <div class="form-group">
             <label>Jméno a příjmení <span class="req">*</span></label>
             <input type="text" name="jmeno" placeholder="Jan Novák" required/>
@@ -655,7 +654,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
         <button type="submit" class="btn-submit" id="submit-btn">Odeslat objednávku →</button>
         <p class="form-note">Odesláním formuláře souhlasíte se zpracováním osobních údajů za účelem vyřízení vaší poptávky.</p>
         <div class="success-msg" id="success-msg">✔ Děkujeme! Vaše objednávka byla odeslána. Ozveme se vám do 24 hodin.</div>
-        <div class="error-msg" id="error-msg">✖ Nepodařilo se odeslat. Prosím napište přímo na <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a></div>
+        <div class="error-msg" id="error-msg">✖ Nepodařilo se odeslat. Prosím napište přímo na <a href="mailto:azotercz@gmail.com" style="color:#c62828;font-weight:700">azotercz@gmail.com</a></div>
       </form>
     </div>
 
@@ -747,7 +746,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
       </div>
 
       <div class="warn-box" style="background:#e8f5e9;border-color:#66bb6a;border-left-color:var(--teal);margin-top:20px">
-        💬 Pro konkrétní informace o spolupráci se obraťte na <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a> nebo <a href="tel:+420731055826" style="color:var(--teal);font-weight:700">+420 731 055 826</a>
+        💬 Pro konkrétní informace o spolupráci se obraťte na <a href="mailto:azotercz@gmail.com" style="color:#c62828;font-weight:700">azotercz@gmail.com</a> nebo <a href="tel:+420731055826" style="color:var(--teal);font-weight:700">+420 731 055 826</a>
       </div>
     </div>
 
@@ -766,7 +765,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
         </div>
         <div class="c-row">
           <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><span class="c-label">E-mail</span><a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a></div>
+          <div><span class="c-label">E-mail</span><a href="mailto:azotercz@gmail.com" style="color:#c62828;font-weight:700">azotercz@gmail.com</a></div>
         </div>
         <div class="c-row">
           <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
@@ -820,7 +819,7 @@ footer{background:var(--navy);padding:28px 24px 18px;margin-top:40px}
     <div class="footer-col">
       <h4>Kontakt</h4>
       <a href="tel:+420731055826">+420 731 055 826</a>
-      <a href="mailto:azotercz@gmail.com">azotercz@gmail.com</a>
+      <a href="mailto:azotercz@gmail.com" style="color:#c62828;font-weight:700">azotercz@gmail.com</a>
       <p>AZOTER CZ s.r.o.</p>
     </div>
   </div>
@@ -843,8 +842,7 @@ function toggleFaq(el) {
 (function() {
   var slides = document.querySelectorAll('.hero-slide');
   var dots   = document.querySelectorAll('.hero-dot');
-  var idx    = 0;
-  var timer;
+  var idx    = 0, timer;
   window.goSlide = function(n) {
     slides[idx].classList.remove('active');
     dots[idx].classList.remove('active');
@@ -859,32 +857,18 @@ function toggleFaq(el) {
 
 /* ── Záložky ── */
 function switchTabBtn(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(function(p) {
-    p.classList.remove('active');
-  });
-  document.querySelectorAll('.tab-btn').forEach(function(b) {
-    b.classList.remove('active');
-  });
-  document.querySelectorAll('.nav-link:not(.kontakt-btn)').forEach(function(a) {
-    a.classList.remove('active');
-  });
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.nav-link:not(.kontakt-btn)').forEach(function(a) { a.classList.remove('active'); });
   var panel = document.getElementById('tab-' + id);
   if (panel) panel.classList.add('active');
-  if (btn && btn.classList && btn.classList.contains('tab-btn')) {
-    btn.classList.add('active');
-  }
+  if (btn && btn.classList && btn.classList.contains('tab-btn')) btn.classList.add('active');
   var nav = document.querySelector('.tabs-nav');
-  if (nav) {
-    var top = nav.getBoundingClientRect().top + window.pageYOffset - 70;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
+  if (nav) window.scrollTo({ top: nav.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
 }
-
 function switchTab(id, navLink) {
   switchTabBtn(id, null);
-  if (navLink && navLink.classList && navLink.classList.contains('nav-link')) {
-    navLink.classList.add('active');
-  }
+  if (navLink && navLink.classList && navLink.classList.contains('nav-link')) navLink.classList.add('active');
 }
 
 /* ── Hamburger ── */
@@ -892,36 +876,31 @@ function switchTab(id, navLink) {
   var hb = document.getElementById('hamburger');
   var nl = document.getElementById('nav-links');
   if (!hb || !nl) return;
-  function setMobile() {
-    if (window.innerWidth <= 768) nl.classList.add('closed');
-    else nl.classList.remove('closed');
-  }
   hb.addEventListener('click', function() {
     hb.classList.toggle('open');
     nl.classList.toggle('closed');
   });
+  function setMobile() {
+    if (window.innerWidth <= 768) nl.classList.add('closed');
+    else nl.classList.remove('closed');
+  }
   window.addEventListener('resize', setMobile);
   setMobile();
 })();
-
 function closeMenu() {
   var hb = document.getElementById('hamburger');
   var nl = document.getElementById('nav-links');
-  if (window.innerWidth <= 768 && nl) {
-    nl.classList.add('closed');
-    if (hb) hb.classList.remove('open');
-  }
+  if (window.innerWidth <= 768 && nl) { nl.classList.add('closed'); if (hb) hb.classList.remove('open'); }
 }
 
-/* ── Objednávka ── */
+/* ── Objednávka – EmailJS ── */
 function submitForm(e) {
   e.preventDefault();
+
   var form = document.getElementById('order-form');
   var btn  = document.getElementById('submit-btn');
   var ok   = document.getElementById('success-msg');
   var err  = document.getElementById('error-msg');
-
-  if (!form || !btn || !ok || !err) return;
 
   ok.style.display  = 'none';
   err.style.display = 'none';
@@ -929,36 +908,38 @@ function submitForm(e) {
   btn.textContent   = 'Odesílám…';
   form.style.opacity = '0.7';
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'odeslat-objednavku.php', true);
-  xhr.setRequestHeader('Accept', 'application/json');
+  /* Připrav parametry pro EmailJS šablonu */
+  var params = {
+    jmeno:           form.querySelector('[name="jmeno"]').value,
+    telefon:         form.querySelector('[name="telefon"]').value,
+    email:           form.querySelector('[name="email"]').value,
+    typ_nemovitosti: form.querySelector('[name="typ_nemovitosti"]').value,
+    adresa:          form.querySelector('[name="adresa"]').value,
+    forma_podkladu:  form.querySelector('[name="forma_podkladu"]').value,
+    termin:          form.querySelector('[name="termin"]').value,
+    poznamka:        form.querySelector('[name="poznamka"]').value,
+    reply_to:        form.querySelector('[name="email"]').value
+  };
 
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState !== 4) return;
-    btn.disabled       = false;
-    btn.textContent    = 'Odeslat objednávku →';
-    form.style.opacity = '1';
-    if (xhr.status >= 200 && xhr.status < 300) {
-      try {
-        var resp = JSON.parse(xhr.responseText);
-        if (resp && resp.ok === false) { err.style.display = 'block'; return; }
-      } catch (ex) { /* ignoruj chybu parsování */ }
-      ok.style.display = 'block';
+  /* ⚠️  DOPLŇTE vaše Service ID a Template ID z EmailJS dashboardu */
+  var SERVICE_ID  = 'service_q1i2wxd';  /* Service ID */
+  var TEMPLATE_ID = 'template_cbbwndg'; /* Template ID */
+
+  emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
+    .then(function(response) {
+      btn.disabled       = false;
+      btn.textContent    = 'Odeslat objednávku →';
+      form.style.opacity = '1';
+      ok.style.display   = 'block';
       form.reset();
       ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      err.style.display = 'block';
-    }
-  };
-
-  xhr.onerror = function() {
-    btn.disabled       = false;
-    btn.textContent    = 'Odeslat objednávku →';
-    form.style.opacity = '1';
-    err.style.display  = 'block';
-  };
-
-  xhr.send(new FormData(form));
+    }, function(error) {
+      btn.disabled       = false;
+      btn.textContent    = 'Odeslat objednávku →';
+      form.style.opacity = '1';
+      err.style.display  = 'block';
+      console.error('EmailJS chyba:', error);
+    });
 }
 </script>
 </body>
